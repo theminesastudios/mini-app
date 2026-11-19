@@ -1,18 +1,3 @@
-import { MiniDatabase } from "@minesa-org/mini-interaction";
-
-/** Shared database instance for the application. */
-export const db = MiniDatabase.fromEnv();
-
-/** Gets user data from the database. */
-export async function getUserData(userId: string) {
-	try {
-		return await db.get(userId);
-	} catch (error) {
-		console.error("❌ Error getting user data:", error);
-		throw error;
-	}
-}
-
 /**
  * Updates user metadata for Discord linked roles.
  * `is_miniapp` is always true — everyone who connects gets it.
